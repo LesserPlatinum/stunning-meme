@@ -1,3 +1,5 @@
+# program to choose a number and allow player to guess
+
 print("Can you guess the number I choose? But first how good are you fortune telling skills?"
       "(N)ormal (L)ucky (O)ricalesk (G)odly")
 difficulty = str(input())  # input for difficulty
@@ -19,16 +21,11 @@ print("Beep Boop. What number am I thinking of between 1 and " + str(q) + "?")
 y = int(input())
 
 
-def guess():  # current guess
-    global y
-    y = int(input())
-
-
 def attempt():  # 3 guessing attempts using
     for test in range(2):
         if x != y:
             print("Nope")
-            guess()
+            y = int(input())
         else:
             print("No you beat me! It was " + str(x))
             break
@@ -59,7 +56,7 @@ def hints():  # guess hints
                     else:
                         print(a + "it's prime.")
                         break
-    guess()
+    y = int(input())
 
 
 attempt()
